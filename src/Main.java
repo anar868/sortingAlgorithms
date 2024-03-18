@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 class Main {
     public static void main(String[] args) throws IOException {
@@ -57,220 +58,320 @@ class Main {
                                 dataRev64k, dataRev128k, dataRev250k};
 
 
-//        Insertion sort with random data
         int[][] datumSorted = new int[10][];
 
-        long[] insertionRandomTime = new long[10];
+        double[] insertionRandomTime = new double[10];
 
         for (int j = 0; j < 10; j++)   {
             int[] data = datumRandom[j];
-            long time = 0;
+            double time = 0;
             for (int i = 0; i < 10; i++)    {
-                long startTime = System.currentTimeMillis();
+                double startTime = System.currentTimeMillis();
                 datumSorted[j] = insertionSort(data);
-                long stopTime = System.currentTimeMillis();
+                double stopTime = System.currentTimeMillis();
                 time += (stopTime - startTime);
             }
-            insertionRandomTime[j] = time / 10L;
+            insertionRandomTime[j] = time / (double) 10;
         }
 
-        long[] mergeRandomTime = new long[10];
+        double[] mergeRandomTime = new double[10];
 
         for (int j = 0; j < 10; j++)   {
             int[] data = datumRandom[j];
-            long time = 0;
+            double time = 0;
             for (int i = 0; i < 10; i++)    {
-                long startTime = System.currentTimeMillis();
+                double startTime = System.currentTimeMillis();
                 int[] savedData = mergeSort(data);
-                long stopTime = System.currentTimeMillis();
+                double stopTime = System.currentTimeMillis();
                 time += (stopTime - startTime);
             }
-            mergeRandomTime[j] = time / 10L;
+            mergeRandomTime[j] = time / (double) 10;
         }
 
-        long[] countingRandomTime = new long[10];
+        double[] countingRandomTime = new double[10];
 
         for (int j = 0; j < 10; j++)   {
             int[] data = datumRandom[j];
-            long time = 0;
+            double time = 0;
             for (int i = 0; i < 10; i++)    {
-                long startTime = System.currentTimeMillis();
+                double startTime = System.currentTimeMillis();
                 int[] savedData = countingSort(data);
-                long stopTime = System.currentTimeMillis();
+                double stopTime = System.currentTimeMillis();
                 time += (stopTime - startTime);
             }
-            countingRandomTime[j] = time / 10L;
+            countingRandomTime[j] = time / (double) 10;
         }
 
-        long[] insertionSortedTime = new long[10];
+        double[] insertionSortedTime = new double[10];
 
         for (int j = 0; j < 10; j++)   {
             int[] data = datumSorted[j];
-            long time = 0;
+            double time = 0;
             for (int i = 0; i < 10; i++)    {
-                long startTime = System.currentTimeMillis();
+                double startTime = System.currentTimeMillis();
                 int[] savedData = insertionSort(data);
-                long stopTime = System.currentTimeMillis();
+                double stopTime = System.currentTimeMillis();
                 time += (stopTime - startTime);
             }
-            insertionSortedTime[j] = time / 10L;
+            insertionSortedTime[j] = time / (double) 10;
         }
 
-        long[] mergeSortedTime = new long[10];
+        double[] mergeSortedTime = new double[10];
 
         for (int j = 0; j < 10; j++)   {
             int[] data = datumSorted[j];
-            long time = 0;
+            double time = 0;
             for (int i = 0; i < 10; i++)    {
-                long startTime = System.currentTimeMillis();
+                double startTime = System.currentTimeMillis();
                 int[] savedData = mergeSort(data);
-                long stopTime = System.currentTimeMillis();
+                double stopTime = System.currentTimeMillis();
                 time += (stopTime - startTime);
             }
-            mergeSortedTime[j] = time / 10L;
+            mergeSortedTime[j] = time / (double) 10;
         }
 
-        long[] countingSortedTime = new long[10];
+        double[] countingSortedTime = new double[10];
 
         for (int j = 0; j < 10; j++)   {
             int[] data = datumSorted[j];
-            long time = 0;
+            double time = 0;
             for (int i = 0; i < 10; i++)    {
-                long startTime = System.currentTimeMillis();
+                double startTime = System.currentTimeMillis();
                 int[] savedData = countingSort(data);
-                long stopTime = System.currentTimeMillis();
+                double stopTime = System.currentTimeMillis();
                 time += (stopTime - startTime);
             }
-            countingSortedTime[j] = time / 10L;
+            countingSortedTime[j] = time / (double) 10;
         }
 
-        long[] insertionReversedTime = new long[10];
+        double[] insertionReversedTime = new double[10];
 
         for (int j = 0; j < 10; j++)   {
             int[] data = datumReversed[j];
-            long time = 0;
+            double time = 0;
             for (int i = 0; i < 10; i++)    {
-                long startTime = System.currentTimeMillis();
+                double startTime = System.currentTimeMillis();
                 int[] savedData = insertionSort(data);
-                long stopTime = System.currentTimeMillis();
+                double stopTime = System.currentTimeMillis();
                 time += (stopTime - startTime);
             }
-            insertionReversedTime[j] = time / 10L;
+            insertionReversedTime[j] = time / (double) 10;
         }
 
-        long[] mergeReversedTime = new long[10];
+        double[] mergeReversedTime = new double[10];
 
         for (int j = 0; j < 10; j++)   {
             int[] data = datumReversed[j];
-            long time = 0;
+            double time = 0;
             for (int i = 0; i < 10; i++)    {
-                long startTime = System.currentTimeMillis();
+                double startTime = System.currentTimeMillis();
                 int[] savedData = mergeSort(data);
-                long stopTime = System.currentTimeMillis();
+                double stopTime = System.currentTimeMillis();
                 time += (stopTime - startTime);
             }
-            mergeReversedTime[j] = time / 10L;
+            mergeReversedTime[j] = time / (double) 10;
         }
 
-        long[] countingReversedTime = new long[10];
+        double[] countingReversedTime = new double[10];
 
         for (int j = 0; j < 10; j++)   {
             int[] data = datumReversed[j];
-            long time = 0;
+            double time = 0;
             for (int i = 0; i < 10; i++)    {
-                long startTime = System.currentTimeMillis();
+                double startTime = System.currentTimeMillis();
                 int[] savedData = countingSort(data);
-                long stopTime = System.currentTimeMillis();
+                double stopTime = System.currentTimeMillis();
                 time += (stopTime - startTime);
             }
-            countingReversedTime[j] = time / 10L;
+            countingReversedTime[j] = time / (double) 10;
         }
 
-        System.out.println("Random Input Data Timing Results in ms");
+        double[] linearRandomTime = new double[10];
+
+        for (int j = 0; j < 10; j++)   {
+            int[] data = datumRandom[j];
+            int low = 0;
+            int high = data.length;
+            double time = 0;
+            for (int i = 0; i < 1000; i++)    {
+                Random r = new Random();
+                int random = r.nextInt(high-low) + low;
+
+                int n = data[random];
+
+                double startTime = System.nanoTime();
+                int savedData = linearSearch(data, n);
+                double stopTime = System.nanoTime();
+                time += (stopTime - startTime);
+            }
+            linearRandomTime[j] = time / (double) 1000;
+        }
+
+        double[] linearSortedTime = new double[10];
+
+        for (int j = 0; j < 10; j++)   {
+            int[] data = datumSorted[j];
+            int low = 0;
+            int high = data.length;
+            double time = 0;
+            for (int i = 0; i < 1000; i++)    {
+                Random r = new Random();
+                int random = r.nextInt(high-low) + low;
+
+                int n = data[random];
+
+                double startTime = System.nanoTime();
+                int savedData = linearSearch(data, n);
+                double stopTime = System.nanoTime();
+                time += (stopTime - startTime);
+            }
+            linearSortedTime[j] = time / (double) 1000;
+        }
+
+        double[] binarySortedTime = new double[10];
+
+        for (int j = 0; j < 10; j++)   {
+            int[] data = datumSorted[j];
+            int low = 0;
+            int high = data.length;
+            double time = 0;
+            for (int i = 0; i < 1000; i++)    {
+                Random r = new Random();
+                int random = r.nextInt(high-low) + low;
+
+                int n = data[random];
+
+                double startTime = System.nanoTime();
+                int savedData = binarySearch(data, n);
+                double stopTime = System.nanoTime();
+                time += (stopTime - startTime);
+            }
+            binarySortedTime[j] = time / (double) 1000;
+        }
+
+        System.out.println("\nRandom Input Data Timing Results in ms");
 
         System.out.print("Insertion sort: ");
-        for (long i : insertionRandomTime)    {
+        for (double i : insertionRandomTime)    {
             System.out.print(i + " ");
         }
         System.out.println(" ");
 
         System.out.print("Merge sort: ");
-        for (long i : mergeRandomTime)    {
+        for (double i : mergeRandomTime)    {
             System.out.print(i + " ");
         }
         System.out.println(" ");
 
         System.out.print("Counting sort: ");
-        for (long i : countingRandomTime)    {
+        for (double i : countingRandomTime)    {
             System.out.print(i + " ");
         }
         System.out.println(" ");
 
-        System.out.println("Sorted Input Data Timing Results in ms");
+        System.out.println("\nSorted Input Data Timing Results in ms");
 
         System.out.print("Insertion sort: ");
-        for (long i : insertionSortedTime)    {
+        for (double i : insertionSortedTime)    {
             System.out.print(i + " ");
         }
         System.out.println(" ");
 
         System.out.print("Merge sort: ");
-        for (long i : mergeSortedTime)    {
+        for (double i : mergeSortedTime)    {
             System.out.print(i + " ");
         }
         System.out.println(" ");
 
         System.out.print("Counting sort: ");
-        for (long i : countingSortedTime)    {
+        for (double i : countingSortedTime)    {
             System.out.print(i + " ");
         }
         System.out.println(" ");
 
-        System.out.println("Reversely Sorted Input Data Timing Results in ms");
+        System.out.println("\nReversely Sorted Input Data Timing Results in ms");
 
         System.out.print("Insertion sort: ");
-        for (long i : insertionReversedTime)    {
+        for (double i : insertionReversedTime)    {
             System.out.print(i + " ");
         }
         System.out.println(" ");
 
         System.out.print("Merge sort: ");
-        for (long i : mergeReversedTime)    {
+        for (double i : mergeReversedTime)    {
             System.out.print(i + " ");
         }
         System.out.println(" ");
 
         System.out.print("Counting sort: ");
-        for (long i : countingReversedTime)    {
+        for (double i : countingReversedTime)    {
+            System.out.print(i + " ");
+        }
+        System.out.println(" ");
+
+        System.out.print("Linear search (random data): ");
+        for (double i : linearRandomTime)    {
+            System.out.print(i + " ");
+        }
+        System.out.println(" ");
+
+        System.out.print("Linear search (sorted data): ");
+        for (double i : linearSortedTime)    {
+            System.out.print(i + " ");
+        }
+        System.out.println(" ");
+
+        System.out.print("Binary search (sorted data): ");
+        for (double i : binarySortedTime)    {
             System.out.print(i + " ");
         }
         System.out.println(" ");
 
 
+        int[] inputAxis = {500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000, 250000};
 
+//        Random Input Data Timing Results in ms
 
+        double[][] yAxisRandom = new double[3][10];
+        yAxisRandom[0] = insertionRandomTime;
+        yAxisRandom[1] = mergeRandomTime;
+        yAxisRandom[2] = countingRandomTime;
+        showAndSaveChart(new String[]{"Tests on a random data", "Milliseconds", "Insertion Sort", "Merge Sort",
+                "Counting Sort"}, inputAxis, yAxisRandom);
 
-        // X axis data
-//        int[] inputAxis = {512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 251282};
-//
-//        // Create sample data for linear runtime
-//        double[][] yAxis = new double[2][10];
-//        yAxis[0] = new double[]{512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 251282};
-//        yAxis[1] = new double[]{300, 800, 1800, 3000, 7000, 15000, 31000, 64000, 121000, 231000};
-//
-//        int[] test = {2048, 1024, 512, 8192, 131072, 4096, 65536, 16384, 251282,32768};
+//        Sorted Input Data Timing Results in ms
 
-//        System.out.print(Arrays.toString(countingSort(test)));
-//        System.out.print("\n");
-//        System.out.print(binarySearch(inputAxis, 16384));
-        // Save the char as .png and show it
-//        showAndSaveChart("Sample Test", inputAxis, yAxis);
+        double[][] yAxisSorted = new double[3][10];
+        yAxisSorted[0] = insertionSortedTime;
+        yAxisSorted[1] = mergeSortedTime;
+        yAxisSorted[2] = countingSortedTime;
+        showAndSaveChart(new String[]{"Tests on a sorted data", "Milliseconds", "Insertion Sort", "Merge Sort",
+                "Counting Sort"}, inputAxis, yAxisSorted);
+
+//        Reversely sorted Input Data Timing Results in ms
+
+        double[][] yAxisReversed = new double[3][10];
+        yAxisReversed[0] = insertionReversedTime;
+        yAxisReversed[1] = mergeReversedTime;
+        yAxisReversed[2] = countingReversedTime;
+        showAndSaveChart(new String[]{"Tests on a reversely sorted data", "Milliseconds", "Insertion Sort", "Merge Sort",
+                "Counting Sort"}, inputAxis, yAxisReversed);
+
+//        Search algorithms
+
+        double[][] yAxisLinearRandom = new double[3][10];
+        yAxisLinearRandom[0] = linearRandomTime;
+        yAxisLinearRandom[1] = linearSortedTime;
+        yAxisLinearRandom[2] = binarySortedTime;
+        showAndSaveChart(new String[]{"Searching algorithms", "Nanoseconds", "Linear search random", "Linear search sorted",
+                "Binary search sorted"}, inputAxis, yAxisLinearRandom);
+
     }
 
-    public static void showAndSaveChart(String title, int[] xAxis, double[][] yAxis) throws IOException {
+    public static void showAndSaveChart(String[] titles, int[] xAxis, double[][] yAxis) throws IOException {
         // Create Chart
-        XYChart chart = new XYChartBuilder().width(800).height(600).title(title)
-                .yAxisTitle("Time in Milliseconds").xAxisTitle("Input Size").build();
+        XYChart chart = new XYChartBuilder().width(800).height(600).title(titles[0])
+                .yAxisTitle("Time in " + titles[1]).xAxisTitle("Input Size").build();
 
         // Convert x axis to double[]
         double[] doubleX = Arrays.stream(xAxis).asDoubleStream().toArray();
@@ -280,11 +381,12 @@ class Main {
         chart.getStyler().setDefaultSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Line);
 
         // Add a plot for a sorting algorithm
-        chart.addSeries("Sample Data 1", doubleX, yAxis[0]);
-        chart.addSeries("Sample Data 2", doubleX, yAxis[1]);
+        chart.addSeries(titles[2], doubleX, yAxis[0]);
+        chart.addSeries(titles[3], doubleX, yAxis[1]);
+        chart.addSeries(titles[4], doubleX, yAxis[2]);
 
         // Save the chart as PNG
-        BitmapEncoder.saveBitmap(chart, title + ".png", BitmapEncoder.BitmapFormat.PNG);
+        BitmapEncoder.saveBitmap(chart, titles[0] + ".png", BitmapEncoder.BitmapFormat.PNG);
 
         // Show the chart
         new SwingWrapper(chart).displayChart();

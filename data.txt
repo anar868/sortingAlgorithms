@@ -1,0 +1,18 @@
+Random Input Data Timing Results in ms
+Insertion sort: 0.1 0.1 0.2 0.4 1.7 6.8 9.8 40.5 165.2 634.1
+Merge sort: 0.0 0.1 0.1 0.2 0.2 1.2 1.0 1.6 2.9 6.4
+Counting sort: 85.8 88.2 88.2 88.2 88.3 88.3 88.4 88.7 89.0 89.7
+
+Sorted Input Data Timing Results in ms
+Insertion sort: 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.2
+Merge sort: 0.1 0.0 0.0 0.2 0.2 0.6 1.1 2.1 3.9 7.0
+Counting sort: 88.7 88.3 88.3 88.7 88.4 88.7 88.9 89.3 89.5 89.9
+
+Reversely Sorted Input Data Timing Results in ms
+Insertion sort: 0.0 0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.1 0.2
+Merge sort: 0.0 0.1 0.0 0.0 0.2 0.2 0.5 1.0 2.0 4.1
+Counting sort: 89.0 89.1 89.5 89.6 89.9 89.6 90.1 90.5 91.2 91.7
+
+Linear search (random data): 1595.479 3093.958 1989.526 609.086 682.456 1267.342 2553.676 5040.472 9748.198 19356.019
+Linear search (sorted data): 70.388 102.293 175.548 330.304 626.973 1235.183 2500.135 4839.632 9741.509 18857.463
+Binary search (sorted data): 179.648 78.354 82.589 84.333 89.326 103.908 82.135 87.905 95.99 105.576
